@@ -1,0 +1,12 @@
+const express=require('express')
+const router=express.Router()
+const shopController=require('../controllers/ShopController')
+router.get('/products/:productId',shopController.getProduct)
+router.get('/products',shopController.getProducts)
+router.put('/cart/delete/:productId',shopController.deleteFromCart)
+router.get('/cart',shopController.getCart)
+router.post('/cart',shopController.postCart)
+router.get('/checkout',shopController.getCheckout)
+router.get('/orders',shopController.getOrders)
+router.get('/index',shopController.getIndex)
+module.exports=router

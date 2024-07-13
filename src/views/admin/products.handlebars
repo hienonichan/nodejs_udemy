@@ -1,0 +1,20 @@
+<h1>Admin product</h1>
+
+{{#each products}}
+<div class="card" style="width: 18rem;">
+  <img src="{{this.imageUrl}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Tên sản phẩm : {{this.title}}</h5>
+    <p class="card-text">Mô tả : {{this.description}}</p>
+    <p class="card-text">Giá : {{this.price}} VND</p>
+    <div>
+         <a href="/admin/edit-product/{{this.id}}?edit=true" class="btn btn-primary">Edit</a>
+        <form action="/admin/delete-product/{{this.id}}?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+  </div>
+</div>
+{{else}}
+    <h1>No products found</h1>
+{{/each}}

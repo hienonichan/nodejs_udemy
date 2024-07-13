@@ -1,0 +1,9 @@
+<h1>{{product.title}}</h1>
+<hr>
+<img src="{{product.imageUrl}}" alt="product's image ">
+<hr>
+<h2>Giá: {{product.price}}</h2>
+<p>Mô tả: {{product.description}} </p>
+    <form action="/add-to-cart" method="POST">
+        <button type="submit" class="btn btn-primary">Add to cart</button>
+    </form>

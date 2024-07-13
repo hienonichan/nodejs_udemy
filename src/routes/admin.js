@@ -1,0 +1,10 @@
+const express=require('express')
+const router=express.Router()
+const adminController=require('../controllers/AdminController')
+router.get('/edit-product/:productId',adminController.getEditProduct)
+router.put('/edit-product/:productId',adminController.putEditProduct)
+router.delete('/delete-product/:productId',adminController.deleteProduct)
+router.get('/add-products',adminController.getAddproducts)
+router.get('/products',adminController.getProducts)
+router.post('/products',adminController.postProducts)
+module.exports=router

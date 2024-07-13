@@ -1,0 +1,18 @@
+<h1>SHOP PAGE</h1>
+{{#each products}}
+<div class="card" style="width: 18rem;">
+  <img src="{{this.imageUrl}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Tên sản phẩm : {{this.title}}</h5>
+    <p class="card-text">Mô tả : {{this.description}}</p>
+    <p class="card-text">Giá : {{this.price}} VND</p>
+    <a href="/shop/products/{{this.id}}"><h5>Detail</h5></a>
+    <form action="/shop/cart" method="POST">
+        <button type="submit" class="btn btn-primary">Add to cart</button>
+        <input type="hidden" name="productId" value="{{this.id}}">
+    </form>
+  </div>
+</div>
+{{else}}
+    <h1>No products found</h1>
+{{/each}}
