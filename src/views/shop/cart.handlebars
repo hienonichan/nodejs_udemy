@@ -1,5 +1,4 @@
 <h1>Cart page</h1>
-
 <div>
     <table class="table">
   <thead>
@@ -16,19 +15,23 @@
     {{#each products}}
     <tr>
       <th scope="row">{{@index}}</th>
-      <td>{{this.productData.title}}</td>
-      <td>{{this.productData.description}}</td>
-      <td>{{this.productData.price}}</td>
-      <td>{{this.qty}}</td>
-       <td><form action="/shop/cart/delete/{{this.productData.id}}?_method=PUT" method="POST">
-            <button class="btn btn-primary" type="submit">Gỡ</button>
+      <td>{{this.title}}</td>
+      <td>{{this.description}}</td>
+      <td>{{this.price}}</td>
+      <td>{{this.cartItem.quantity}}</td>
+       <td><form action="/shop/cart/delete/{{this.id}}?_method=DELETE" method="POST">
+            <button class="btn btn-primary" type="submit">Xóa khỏi giỏ hàng</button>
        </form></td>
     </tr>
+    {{else}}
+      <h1>Không có sản phẩm nào trong giỏ hàng</h1>
     {{/each}}
   </tbody>
 </table>
 </div>
 
 <div>
-    <h1>Thành tiền : {{totalPrice}} VNĐ</h1>
+  <form action="/shop/create-order" method="POST">
+     <button class="btn btn-primary">Create Order</button>
+  </form>
 </div>

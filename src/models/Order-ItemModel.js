@@ -1,7 +1,8 @@
 const Sequelize=require('sequelize')
 const sequelize=require('../config/database')
 
-const Cart=sequelize.define('cart',{
+const OrderItem=sequelize.define('orderItem',{
   id:{type:Sequelize.INTEGER,autoIncrement:true,allowNULL:false,primaryKey:true},
+  quantity:{type:Sequelize.INTEGER},
 })
-module.exports=Cart
+module.exports=OrderItem
